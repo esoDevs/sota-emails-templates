@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Cambio de correo</title>
+  </head>
+
+  <body style="margin:0;padding:0;background:#EEF2FF;font-family:Arial,Helvetica,sans-serif;color:#111827;">
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#EEF2FF;padding:24px 0;">
+      <tr>
+        <td align="center">
+          <table role="presentation" width="600" cellspacing="0" cellpadding="0"
+            style="width:600px;max-width:600px;background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 10px 28px rgba(55,48,163,0.18);">
+
+            <!-- Header -->
+            <tr>
+              <td style="padding:22px 24px;background:#4F46E5;color:#ffffff;">
+                <div style="display:flex;align-items:center;gap:10px;">
+                  <div style="width:10px;height:10px;border-radius:999px;background:#10B981;box-shadow:0 0 0 4px rgba(16,185,129,0.22);"></div>
+                  <div style="font-size:16px;font-weight:800;letter-spacing:0.3px;">Sota</div>
+                </div>
+                <div style="font-size:13px;opacity:0.9;margin-top:6px;">
+                  Confirmación de cambio de correo
+                </div>
+              </td>
+            </tr>
+
+            <!-- Content -->
+            <tr>
+              <td style="padding:26px 24px 8px 24px;">
+                <h1 style="margin:0 0 10px;font-size:20px;line-height:1.3;color:#111827;">
+                  Confirma tu nuevo correo
+                </h1>
+
+                <p style="margin:0 0 12px;font-size:14px;line-height:1.6;color:#374151;">
+                  Usa este código para confirmar el cambio de correo en tu cuenta.
+                </p>
+
+                <!-- New email box -->
+                <div style="margin:14px 0 10px;padding:12px 14px;border:1px solid #E0E7FF;border-radius:12px;background:#F8FAFF;">
+                  <div style="font-size:12px;color:#6B7280;margin-bottom:6px;letter-spacing:0.4px;">
+                    NUEVO CORREO
+                  </div>
+                  <div style="font-size:14px;font-weight:700;color:#111827;word-break:break-word;">
+                    {{ .NewEmail }}
+                  </div>
+                </div>
+
+                <!-- Confirm button -->
+                <div style="margin:14px 0 16px;text-align:center;">
+                  <a href="{{ .ConfirmationURL }}"
+                     style="display:inline-block;background:#4F46E5;color:#ffffff;text-decoration:none;font-weight:800;
+                            padding:12px 18px;border-radius:12px;font-size:14px;">
+                    Confirmar cambio de correo
+                  </a>
+                </div>
+
+                <!-- Tips -->
+                <div style="margin:0 0 14px;padding:12px 14px;border-left:4px solid #10B981;background:#ECFDF5;border-radius:10px;">
+                  <div style="font-size:13px;line-height:1.6;color:#065F46;">
+                    Si <b>no solicitaste</b> este cambio de correo, ignora este mensaje y revisa la seguridad de tu cuenta.
+                  </div>
+                </div>
+
+                <p style="margin:0 0 10px;font-size:13px;line-height:1.6;color:#6B7280;">
+                  Por seguridad, no compartas este código con nadie.
+                </p>
+              </td>
+            </tr>
+
+            <!-- Footer -->
+            <tr>
+              <td style="padding:16px 24px;background:#F8FAFF;border-top:1px solid #E0E7FF;">
+                <div style="font-size:12px;color:#6B7280;">
+                  © {{ .CurrentYear }} Sota. Todos los derechos reservados.
+                </div>
+              </td>
+            </tr>
+          </table>
+
+          <div style="max-width:600px;padding:12px 18px;text-align:center;font-size:11px;color:#9CA3AF;">
+            Este correo fue enviado automáticamente. No respondas a este mensaje.
+          </div>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
