@@ -1,0 +1,1 @@
+# sota-emails-templates
