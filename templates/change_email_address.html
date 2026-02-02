@@ -3,85 +3,131 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="x-apple-disable-message-reformatting" />
     <title>Cambio de correo</title>
+
+    <style>
+      html, body { margin:0 !important; padding:0 !important; width:100% !important; height:100% !important; }
+      table { border-collapse:collapse !important; }
+      a { text-decoration:none; }
+
+      /* Responsive */
+      @media screen and (max-width: 620px) {
+        .wrapper { padding: 14px 16px !important; } /* margen lateral real */
+        .container { width: 100% !important; max-width: 100% !important; }
+        .card { width: 100% !important; border-radius: 14px !important; } /* mantiene look */
+        .header { padding: 18px 16px !important; }
+        .content { padding: 20px 16px 6px 16px !important; }
+        .footer { padding: 14px 16px !important; }
+        .h1 { font-size: 18px !important; }
+        .btn { display:block !important; width:100% !important; box-sizing:border-box !important; text-align:center !important; }
+      }
+    </style>
   </head>
 
   <body style="margin:0;padding:0;background:#EEF2FF;font-family:Arial,Helvetica,sans-serif;color:#111827;">
-    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#EEF2FF;padding:24px 0;">
+    <!-- Fondo -->
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#EEF2FF;">
       <tr>
-        <td align="center">
-          <table role="presentation" width="600" cellspacing="0" cellpadding="0"
-            style="width:600px;max-width:600px;background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 10px 28px rgba(55,48,163,0.18);">
-
-            <!-- Header -->
+        <td align="center" class="wrapper" style="padding:24px 16px;">
+          <!-- Container -->
+          <table role="presentation" width="100%" cellspacing="0" cellpadding="0"
+                 class="container" style="width:100%;max-width:600px;margin:0 auto;">
             <tr>
-              <td style="padding:22px 24px;background:#4F46E5;color:#ffffff;">
-                <div style="display:flex;align-items:center;gap:10px;">
-                  <div style="width:10px;height:10px;border-radius:999px;background:#10B981;box-shadow:0 0 0 4px rgba(16,185,129,0.22);"></div>
-                  <div style="font-size:16px;font-weight:800;letter-spacing:0.3px;">Sota</div>
-                </div>
-                <div style="font-size:13px;opacity:0.9;margin-top:6px;">
-                  Confirmación de cambio de correo
-                </div>
-              </td>
-            </tr>
+              <td>
+                <!-- Card -->
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0"
+                       class="card"
+                       style="width:100%;background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 10px 28px rgba(55,48,163,0.18);">
 
-            <!-- Content -->
-            <tr>
-              <td style="padding:26px 24px 8px 24px;">
-                <h1 style="margin:0 0 10px;font-size:20px;line-height:1.3;color:#111827;">
-                  Confirma tu nuevo correo
-                </h1>
+                  <!-- Header -->
+                  <tr>
+                    <td class="header" style="padding:22px 24px;background:#4F46E5;color:#ffffff;">
+                      <!-- Marca (tabla, compatible) -->
+                      <table role="presentation" cellspacing="0" cellpadding="0" style="width:100%;">
+                        <tr>
+                          <td style="vertical-align:middle;">
+                            <table role="presentation" cellspacing="0" cellpadding="0">
+                              <tr>
+                                <td style="vertical-align:middle;padding-right:10px;">
+                                  <div style="width:10px;height:10px;border-radius:999px;background:#10B981;box-shadow:0 0 0 4px rgba(16,185,129,0.22);"></div>
+                                </td>
+                                <td style="vertical-align:middle;">
+                                  <div style="font-size:16px;font-weight:800;letter-spacing:0.3px;">Sota</div>
+                                </td>
+                              </tr>
+                            </table>
 
-                <p style="margin:0 0 12px;font-size:14px;line-height:1.6;color:#374151;">
-                  Usa este código para confirmar el cambio de correo en tu cuenta.
-                </p>
+                            <div style="font-size:13px;opacity:0.9;margin-top:6px;">
+                              Confirmación de cambio de correo
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
 
-                <!-- New email box -->
-                <div style="margin:14px 0 10px;padding:12px 14px;border:1px solid #E0E7FF;border-radius:12px;background:#F8FAFF;">
-                  <div style="font-size:12px;color:#6B7280;margin-bottom:6px;letter-spacing:0.4px;">
-                    NUEVO CORREO
-                  </div>
-                  <div style="font-size:14px;font-weight:700;color:#111827;word-break:break-word;">
-                    {{ .NewEmail }}
-                  </div>
-                </div>
+                  <!-- Content -->
+                  <tr>
+                    <td class="content" style="padding:26px 24px 8px 24px;">
+                      <h1 class="h1" style="margin:0 0 10px;font-size:20px;line-height:1.3;color:#111827;">
+                        Confirma tu nuevo correo
+                      </h1>
 
-                <!-- Confirm button -->
-                <div style="margin:14px 0 16px;text-align:center;">
-                  <a href="{{ .ConfirmationURL }}"
-                     style="display:inline-block;background:#4F46E5;color:#ffffff;text-decoration:none;font-weight:800;
-                            padding:12px 18px;border-radius:12px;font-size:14px;">
-                    Confirmar cambio de correo
-                  </a>
-                </div>
+                      <p style="margin:0 0 12px;font-size:14px;line-height:1.6;color:#374151;">
+                        Usa este código para confirmar el cambio de correo en tu cuenta.
+                      </p>
 
-                <!-- Tips -->
-                <div style="margin:0 0 14px;padding:12px 14px;border-left:4px solid #10B981;background:#ECFDF5;border-radius:10px;">
-                  <div style="font-size:13px;line-height:1.6;color:#065F46;">
-                    Si <b>no solicitaste</b> este cambio de correo, ignora este mensaje y revisa la seguridad de tu cuenta.
-                  </div>
-                </div>
+                      <!-- New email box -->
+                      <div style="margin:14px 0 10px;padding:12px 14px;border:1px solid #E0E7FF;border-radius:12px;background:#F8FAFF;">
+                        <div style="font-size:12px;color:#6B7280;margin-bottom:6px;letter-spacing:0.4px;">
+                          NUEVO CORREO
+                        </div>
+                        <div style="font-size:14px;font-weight:700;color:#111827;word-break:break-word;">
+                          {{ .NewEmail }}
+                        </div>
+                      </div>
 
-                <p style="margin:0 0 10px;font-size:13px;line-height:1.6;color:#6B7280;">
-                  Por seguridad, no compartas este código con nadie.
-                </p>
-              </td>
-            </tr>
+                      <!-- Confirm button -->
+                      <div style="margin:14px 0 16px;text-align:center;">
+                        <a class="btn" href="{{ .ConfirmationURL }}"
+                           style="display:inline-block;background:#4F46E5;color:#ffffff;text-decoration:none;font-weight:800;
+                                  padding:12px 18px;border-radius:12px;font-size:14px;">
+                          Confirmar cambio de correo
+                        </a>
+                      </div>
 
-            <!-- Footer -->
-            <tr>
-              <td style="padding:16px 24px;background:#F8FAFF;border-top:1px solid #E0E7FF;">
-                <div style="font-size:12px;color:#6B7280;">
-                  © {{ .CurrentYear }} Sota. Todos los derechos reservados.
+                      <!-- Tips -->
+                      <div style="margin:0 0 14px;padding:12px 14px;border-left:4px solid #10B981;background:#ECFDF5;border-radius:10px;">
+                        <div style="font-size:13px;line-height:1.6;color:#065F46;">
+                          Si <b>no solicitaste</b> este cambio de correo, ignora este mensaje y revisa la seguridad de tu cuenta.
+                        </div>
+                      </div>
+
+                      <p style="margin:0 0 10px;font-size:13px;line-height:1.6;color:#6B7280;">
+                        Por seguridad, no compartas este código con nadie.
+                      </p>
+                    </td>
+                  </tr>
+
+                  <!-- Footer -->
+                  <tr>
+                    <td class="footer" style="padding:16px 24px;background:#F8FAFF;border-top:1px solid #E0E7FF;">
+                      <div style="font-size:12px;color:#6B7280;">
+                        © {{ .CurrentYear }} Sota. Todos los derechos reservados.
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+
+                <!-- Nota inferior -->
+                <div style="padding:12px 6px 0 6px;text-align:center;font-size:11px;color:#9CA3AF;">
+                  Este correo fue enviado automáticamente. No respondas a este mensaje.
                 </div>
               </td>
             </tr>
           </table>
-
-          <div style="max-width:600px;padding:12px 18px;text-align:center;font-size:11px;color:#9CA3AF;">
-            Este correo fue enviado automáticamente. No respondas a este mensaje.
-          </div>
+          <!-- /Container -->
         </td>
       </tr>
     </table>
