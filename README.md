@@ -1,6 +1,6 @@
-# sota-emails-templates
+# sotita-emails-templates
 
-HTML email templates for Sota authentication flows. All templates use inline styles and Spanish copy.
+HTML email templates for Sotita authentication flows. All templates use inline styles and Spanish copy.
 
 ## Templates
 
