@@ -12,6 +12,8 @@ HTML email templates for Sotita authentication flows. All templates use inline s
 | templates/invite_user.html | Invite a user to create an account | `{{ .ConfirmationURL }}`, `{{ .CurrentYear }}` |
 | templates/magic_link.html | Magic link login | `{{ .ConfirmationURL }}`, `{{ .CurrentYear }}` |
 | templates/reauthentication.html | Reauthentication verification code | `{{ .Token }}`, `{{ .CurrentYear }}` |
+| templates/delete_account.html | In-app account deletion OTP | `{{ .Token }}`, `{{ .CurrentYear }}` |
+| templates/delete_account_web.html | Public web account deletion link | `{{ .ActionURL }}`, `{{ .ExpiresMinutes }}`, `{{ .CurrentYear }}` |
 
 ## Notes
 

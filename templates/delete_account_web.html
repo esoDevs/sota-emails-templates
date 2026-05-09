@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="x-apple-disable-message-reformatting" />
+    <title>Confirma la eliminación de tu cuenta</title>
+
+    <style>
+      html, body { margin:0 !important; padding:0 !important; width:100% !important; height:100% !important; }
+      table { border-collapse:collapse !important; }
+      a { text-decoration:none; }
+      img { border:0; outline:none; text-decoration:none; -ms-interpolation-mode:bicubic; }
+
+      @media screen and (max-width: 620px) {
+        .wrapper { padding: 14px 16px !important; }
+        .container { width: 100% !important; max-width: 100% !important; }
+        .card { width: 100% !important; border-radius: 14px !important; }
+        .header { padding: 18px 16px !important; }
+        .content { padding: 20px 16px 6px 16px !important; }
+        .footer { padding: 14px 16px !important; }
+        .h1 { font-size: 18px !important; }
+        .button { display:block !important; width:100% !important; box-sizing:border-box !important; }
+      }
+    </style>
+  </head>
+
+  <body style="margin:0;padding:0;background:#EEF2FF;font-family:Arial,Helvetica,sans-serif;color:#111827;">
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#EEF2FF;">
+      <tr>
+        <td align="center" class="wrapper" style="padding:24px 16px;">
+          <table role="presentation" width="100%" cellspacing="0" cellpadding="0"
+                 class="container" style="width:100%;max-width:600px;margin:0 auto;">
+            <tr>
+              <td>
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0"
+                       class="card"
+                       style="width:100%;background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 10px 28px rgba(55,48,163,0.18);">
+                  <tr>
+                    <td class="header" style="padding:22px 24px;background:#4F46E5;color:#ffffff;">
+                      <div style="font-size:16px;font-weight:800;letter-spacing:0.3px;">Sotita</div>
+                      <div style="font-size:13px;opacity:0.9;margin-top:6px;">Eliminación de cuenta desde la web</div>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td class="content" style="padding:26px 24px 8px 24px;">
+                      <h1 class="h1" style="margin:0 0 10px;font-size:20px;line-height:1.3;color:#111827;">
+                        Confirma la eliminación de tu cuenta
+                      </h1>
+
+                      <p style="margin:0 0 14px;font-size:14px;line-height:1.6;color:#374151;">
+                        Recibimos una solicitud para eliminar tu cuenta de Sotita desde el formulario web. Para continuar, confirma explícitamente desde el botón inferior.
+                      </p>
+
+                      <p style="margin:0 0 18px;font-size:14px;line-height:1.6;color:#991B1B;">
+                        Después de confirmar, bloquearemos el acceso normal a tu cuenta y programaremos la eliminación física de tus datos dentro de 30 días.
+                      </p>
+
+                      <div style="margin:20px 0;text-align:center;">
+                        <a class="button" href="{{ .ActionURL }}"
+                           style="display:inline-block;padding:14px 20px;border-radius:12px;background:#4F46E5;color:#ffffff;font-weight:800;font-size:14px;">
+                          Confirmar eliminación
+                        </a>
+                      </div>
+
+                      <p style="margin:0 0 14px;font-size:13px;line-height:1.6;color:#6B7280;">
+                        Este enlace vence en {{ .ExpiresMinutes }} minutos. Si no solicitaste esto, ignora este correo y cambia tu contraseña.
+                      </p>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td class="footer" style="padding:16px 24px;background:#F8FAFF;border-top:1px solid #E0E7FF;">
+                      <div style="font-size:12px;color:#6B7280;">
+                        © {{ .CurrentYear }} Sotita. Todos los derechos reservados.
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+
+                <div style="padding:12px 6px 0 6px;text-align:center;font-size:11px;color:#9CA3AF;">
+                  Este correo fue enviado automáticamente. No respondas a este mensaje.
+                </div>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
